@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Amit Parihar - Resume</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f9fc;
+      padding: 40px;
+    }
+    .resume-container {
+      background: white;
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .header {
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+    .header p {
+      margin: 5px 0;
+      color: #555;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    h2 {
+      color: #007bff;
+      font-size: 16px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 4px;
+    }
+    ul {
+      padding-left: 18px;
+      margin: 5px 0;
+    }
+    .btn-download {
+      display: block;
+      width: 200px;
+      text-align: center;
+      margin: 20px auto;
+      padding: 8px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="btn-download" onclick="downloadResume()">⬇ Download Resume</button>
+
+  <div id="resume" class="resume-container">
+
+    <div class="header">
+      <h1>Amit Parihar</h1>
+      <p>Frontend Developer</p>
+      <p>📧 amitparihar.dev@gmail.com | 📞 +91-9876543210</p>
+      <p>🌐 github.com/amitparihar | 🔗 linkedin.com/in/amitparihar</p>
+    </div>
+
+    <h2>Profile Summary</h2>
+    <p>Creative frontend developer with experience in React.js, Tailwind CSS, and performance optimization. Passionate about UI/UX and responsive design.</p>
+
+    <div class="grid">
+      <div>
+        <h2>Skills</h2>
+        <ul>
+          <li><strong>Languages:</strong> HTML, CSS, JavaScript</li>
+          <li><strong>Frameworks:</strong> React.js, Tailwind CSS</li>
+          <li><strong>Tools:</strong> Git, VS Code, Figma</li>
+          <li><strong>Concepts:</strong> Responsive Design, REST APIs</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Education</h2>
+        <p><strong>MCA – RGPV University</strong> (2023–2025)</p>
+        <p><strong>B.Sc. Computer Science – XYZ College</strong> (2020–2023)</p>
+      </div>
+    </div>
+
+    <h2>Projects</h2>
+    <p><strong>Social Media App</strong><br />
+      MERN-based app with real-time chat, likes, and profile system.<br />
+      🔗 GitHub: github.com/amitparihar/social-media
+    </p>
+    <p><strong>Portfolio Website</strong><br />
+      Personal site showcasing projects and resume download.<br />
+      🔗 Live: yourportfolio.com
+    </p>
+
+    <h2>Certifications</h2>
+    <ul>
+      <li>Meta Frontend Developer – Coursera</li>
+      <li>Responsive Web Design – freeCodeCamp</li>
+      <li>JS Algorithms & Data Structures – freeCodeCamp</li>
+    </ul>
+
+    <h2>Languages</h2>
+    <p>English (Professional), Hindi (Native)</p>
+
+  </div>
+
+  <script>
+    function downloadResume() {
+      const resume = document.getElementById("resume");
+      html2pdf().from(resume).save('Amit_Parihar_Resume.pdf');
+    }
+  </script>
+
+</body>
+</html>
