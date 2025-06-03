@@ -79,16 +79,19 @@ async function login (req, res) {
         let { password, ...others } = user[0];
 
 
-        return res.cookie("accessToken", token, {
-            httpOnly: true,
-            maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days in milliseconds
-            secure: process.env.NODE_ENV === 'production', // send only over HTTPS in production
-            sameSite: "strict", // prevent CSRF
-        }).status(200).json({
-            success: true,
-            message: 'User logged in successfully',
-            userInfo: others
-        });
+       return res
+      .cookie("accessToken", token, {
+        httpOnly: true,
+        maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+        secure: process.env.NODE_ENV === "production",
+        sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax", // 👈 fix here
+      })
+      .status(200)
+      .json({
+        success: true,
+        message: "User logged in successfully",
+        userInfo: others,
+      });
         
 
 
