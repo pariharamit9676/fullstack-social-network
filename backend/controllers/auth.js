@@ -22,7 +22,7 @@ async function register(req, res) {
         // **2️ Check if user already exists**
         const [existingUser] = await db.query('SELECT * FROM users WHERE email = ?', [email]);
 
-        if (existingUser) {  
+        if (existingUser && existingUser.length > 0) {  
             return res.status(400).json({ error: 'User already exists' });
         }
 
