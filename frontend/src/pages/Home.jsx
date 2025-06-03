@@ -2,7 +2,6 @@
 import Feeds from "../components/Feeds/index";
 import Share from "../components/Share";
 import Rightbar from "../components/Rightbar"; // <-- Import Rightbar
-import "../styles/Home.css";
 import Story from "../components/Story/index";
 
 const Home = () => {
